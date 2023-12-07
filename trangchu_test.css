@@ -1,0 +1,50 @@
+:root{
+  --primary: #FF5DA7;
+  --light: #FFE0EE;
+  --dark: #000000;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none; /* hủy gạch chân liên kết */
+}
+html{
+  font-family: 'Inter', sans-serif;
+}
+/* navmenu */
+.navbar{
+  background-color: #FFE0EE;
+}
+.logo-head{
+  width: 120px;
+  height: 103px;
+  object-fit: cover;
+}
+.navbar-brand{
+  font-family: 'Luckiest Guy', cursive;
+  color: #FF5DA7 !important;
+  font-weight: 400;
+}
+.form_search{
+  position: relative;
+}
+.icon_head{
+  position: absolute;
+  top: 14%;
+  left: 92%;
+}
+/* products */
+.card_product, .card_danh_muc{
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.card_product:hover, .card_danh_muc:hover{
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+.btn_xem_them{
+  color: white !important;
+  background-color: #FF5DA7 !important;
+}
