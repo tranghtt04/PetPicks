@@ -1,7 +1,8 @@
 :root{
-  --primary: #FF5DA7;
+  --primary: #FF5DA8;
   --light: #FFE0EE;
-  --dark: #000000;
+  --dark: #212529;
+  --white: #ffffff;
 }
 * {
   padding: 0;
@@ -9,7 +10,8 @@
   box-sizing: border-box;
 }
 a {
-  text-decoration: none; /* hủy gạch chân liên kết */
+  text-decoration: none !important; /* hủy gạch chân liên kết */
+  color: var(--dark) !important;
 }
 html{
   font-family: 'Inter', sans-serif;
@@ -25,8 +27,9 @@ html{
 }
 .navbar-brand{
   font-family: 'Luckiest Guy', cursive;
-  color: #FF5DA7 !important;
+  color: var(--primary) !important;
   font-weight: 400;
+  letter-spacing: 1px;
 }
 .form_search{
   position: relative;
@@ -41,15 +44,23 @@ html{
 .card_product, .card_danh_muc{
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-.card_product:hover, .card_danh_muc:hover{
+.card_product:hover, .card_danh_muc:hover, .list-group-item:hover{
   transform: scale(1.05);
   transition: transform 0.2s ease-in-out;
 }
 .btn_xem_them{
-  color: white !important;
-  background-color: #FF5DA7 !important;
+  color: var(--white) !important;
+  background-color: var(--primary) !important;
+}
+.btn_xem_them:hover{
+  color: var(--dark) !important;
+  border: 2px solid var(--primary)  !important;
+  background-color: var(--white)  !important;
 }
 /* footer */
 footer{
   background-color: var(--light);
+}
+.text-footer:hover{
+  color: var(--primary) !important;
 }

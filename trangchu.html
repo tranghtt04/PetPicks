@@ -16,13 +16,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Luckiest+Guy&display=swap"
     rel="stylesheet">
+  <!-- css Scroll Header-->
+  <style>
+    /* The sticky class is added to the header with JS when it reaches its scroll position */
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
 
+    /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+    .sticky+.content {
+      padding-top: 102px;
+    }
+  </style>
 </head>
 
 <body>
   <header>
     <!-- nav menu -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg header" id="myHeader">
       <div class="container">
         <img class="logo-head" alt="logo" src="./images/rectangle-35@2x.png">
         <a class="navbar-brand" aria-current="page" href="#">PETPICKS</a>
@@ -65,7 +79,7 @@
             </div>
             <li><a class="dropdown-item text-end " href="#">Từ khóa hot</a></li>
           </ul>
-          <img class="icon_search" src="./images/frame-39.svg" alt="">
+          <a href="#"><img class="icon_search" src="./images/frame-39.svg" alt=""></a>
         </form>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
           aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,18 +87,24 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-            <li class="nav-item text-center">
-              <img src="./images/frame-34.svg" alt="">
-              <a class="nav-link text-dark" href="#">Đăng nhập/Đăng ký</a>
-            </li>
-            <li class="nav-item text-center ms-5">
-              <img src="./images/frame-35.svg" alt="">
-              <a class="nav-link text-dark" href="#">Lịch hẹn</a>
-            </li>
-            <li class="nav-item text-center ms-5">
-              <img src="./images/frame-36.svg" alt="">
-              <a class="nav-link text-dark" href="#">Giỏ hàng</a>
-            </li>
+            <a href="#">
+              <li class="nav-item text-center">
+                <img src="./images/frame-34.svg" alt="">
+                <a class="nav-link text-dark" href="#">Đăng nhập/Đăng ký</a>
+              </li>
+            </a>
+            <a href="#">
+              <li class="nav-item text-center ms-5">
+                <img src="./images/frame-35.svg" alt="">
+                <a class="nav-link text-dark" href="#">Lịch hẹn</a>
+              </li>
+            </a>
+            <a href="#">
+              <li class="nav-item text-center ms-5">
+                <img src="./images/frame-36.svg" alt="">
+                <a class="nav-link text-dark" href="#">Giỏ hàng</a>
+              </li>
+            </a>
           </ul>
 
         </div>
@@ -122,22 +142,30 @@
     <!-- lối tắt -->
     <div class="container">
       <ul class="d-flex justify-content-center">
-        <li class="list-group-item text-center col-3">
-          <img class="w-25" src="./images/icon_cart.png" alt="">
-          <a class="nav-link text-dark" href="#">Đơn hàng</a>
-        </li>
-        <li class="list-group-item text-center col-3">
-          <img class="w-25" src="./images/icon_spa.png" alt="">
-          <a class="nav-link text-dark" href="#">Spa</a>
-        </li>
-        <li class="list-group-item text-center col-3">
-          <img class="w-25" src="./images/icon_emergency.png" alt="">
-          <a class="nav-link text-dark" href="#">Thú y</a>
-        </li>
-        <li class="list-group-item text-center col-3">
-          <img class="w-25" src="./images/icon_hotel.png" alt="">
-          <a class="nav-link text-dark" href="#">Hotel thú cưng</a>
-        </li>
+        <a href="#">
+          <li class="list-group-item text-center col-3">
+            <img class="w-25" src="./images/icon_cart.png" alt="">
+            <a class="nav-link text-dark" href="#">Đơn hàng</a>
+          </li>
+        </a>
+        <a href="#">
+          <li class="list-group-item text-center col-3">
+            <img class="w-25" src="./images/icon_spa.png" alt="">
+            <a class="nav-link text-dark" href="#">Spa</a>
+          </li>
+        </a>
+        <a href="#">
+          <li class="list-group-item text-center col-3">
+            <img class="w-25" src="./images/icon_emergency.png" alt="">
+            <a class="nav-link text-dark" href="#">Thú y</a>
+          </li>
+        </a>
+        <a href="#">
+          <li class="list-group-item text-center col-3">
+            <img class="w-25" src="./images/icon_hotel.png" alt="">
+            <a class="nav-link text-dark" href="#">Hotel thú cưng</a>
+          </li>
+        </a>
       </ul>
     </div>
     <!-- products -->
@@ -164,7 +192,135 @@
         </div>
         <div class="col-lg-2 col-md-3 pe-4 pb-3">
           <div class="card_product card rounded-3">
-            <img class="card-img-top" alt="" src="./images/rectangle-23@2x.png" />
+            <img class="card-img-top" alt="" src="./images/rectangle-37@2x.png" />
+            <div class="card-body">
+              <div class="d-flex">
+                <p class="price">100.000đ</p>
+                <p class="sale_off ms-auto text-decoration-line-through text-muted">150.000đ</p>
+              </div>
+              <div class="name_product">Tên sản phẩm</div>
+              <div class=" d-flex">
+                <p class="feedback mb-0 me-1">4.5</p>
+                <img class="group-child4" alt="" src="./images/frame-121.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 pe-4 pb-3">
+          <div class="card_product card rounded-3">
+            <img class="card-img-top" alt="" src="./images/rectangle-39@2x.png" />
+            <div class="card-body">
+              <div class="d-flex">
+                <p class="price">100.000đ</p>
+                <p class="sale_off ms-auto text-decoration-line-through text-muted">150.000đ</p>
+              </div>
+              <div class="name_product">Tên sản phẩm</div>
+              <div class=" d-flex">
+                <p class="feedback mb-0 me-1">4.5</p>
+                <img class="group-child4" alt="" src="./images/frame-121.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 pe-4 pb-3">
+          <div class="card_product card rounded-3">
+            <img class="card-img-top" alt="" src="./images/rectangle-41@2x.png" />
+            <div class="card-body">
+              <div class="d-flex">
+                <p class="price">100.000đ</p>
+                <p class="sale_off ms-auto text-decoration-line-through text-muted">150.000đ</p>
+              </div>
+              <div class="name_product">Tên sản phẩm</div>
+              <div class=" d-flex">
+                <p class="feedback mb-0 me-1">4.5</p>
+                <img class="group-child4" alt="" src="./images/frame-121.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 pe-4 pb-3">
+          <div class="card_product card rounded-3">
+            <img class="card-img-top" alt="" src="./images/rectangle-43@2x.png" />
+            <div class="card-body">
+              <div class="d-flex">
+                <p class="price">100.000đ</p>
+                <p class="sale_off ms-auto text-decoration-line-through text-muted">150.000đ</p>
+              </div>
+              <div class="name_product">Tên sản phẩm</div>
+              <div class=" d-flex">
+                <p class="feedback mb-0 me-1">4.5</p>
+                <img class="group-child4" alt="" src="./images/frame-121.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 pe-4 pb-3">
+          <div class="card_product card rounded-3">
+            <img class="card-img-top" alt="" src="./images/rectangle-231@2x.png" />
+            <div class="card-body">
+              <div class="d-flex">
+                <p class="price">100.000đ</p>
+                <p class="sale_off ms-auto text-decoration-line-through text-muted">150.000đ</p>
+              </div>
+              <div class="name_product">Tên sản phẩm</div>
+              <div class=" d-flex">
+                <p class="feedback mb-0 me-1">4.5</p>
+                <img class="group-child4" alt="" src="./images/frame-121.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 pe-4 pb-3">
+          <div class="card_product card rounded-3">
+            <img class="card-img-top" alt="" src="./images/rectangle-371@2x.png" />
+            <div class="card-body">
+              <div class="d-flex">
+                <p class="price">100.000đ</p>
+                <p class="sale_off ms-auto text-decoration-line-through text-muted">150.000đ</p>
+              </div>
+              <div class="name_product">Tên sản phẩm</div>
+              <div class=" d-flex">
+                <p class="feedback mb-0 me-1">4.5</p>
+                <img class="group-child4" alt="" src="./images/frame-121.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 pe-4 pb-3">
+          <div class="card_product card rounded-3">
+            <img class="card-img-top" alt="" src="./images/rectangle-391@2x.png" />
+            <div class="card-body">
+              <div class="d-flex">
+                <p class="price">100.000đ</p>
+                <p class="sale_off ms-auto text-decoration-line-through text-muted">150.000đ</p>
+              </div>
+              <div class="name_product">Tên sản phẩm</div>
+              <div class=" d-flex">
+                <p class="feedback mb-0 me-1">4.5</p>
+                <img class="group-child4" alt="" src="./images/frame-121.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 pe-4 pb-3">
+          <div class="card_product card rounded-3">
+            <img class="card-img-top" alt="" src="./images/rectangle-411@2x.png" />
+            <div class="card-body">
+              <div class="d-flex">
+                <p class="price">100.000đ</p>
+                <p class="sale_off ms-auto text-decoration-line-through text-muted">150.000đ</p>
+              </div>
+              <div class="name_product">Tên sản phẩm</div>
+              <div class=" d-flex">
+                <p class="feedback mb-0 me-1">4.5</p>
+                <img class="group-child4" alt="" src="./images/frame-121.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 pe-4 pb-3">
+          <div class="card_product card rounded-3">
+            <img class="card-img-top" alt="" src="./images/rectangle-431@2x.png" />
             <div class="card-body">
               <div class="d-flex">
                 <p class="price">100.000đ</p>
@@ -196,135 +352,7 @@
         </div>
         <div class="col-lg-2 col-md-3 pe-4 pb-3">
           <div class="card_product card rounded-3">
-            <img class="card-img-top" alt="" src="./images/rectangle-23@2x.png" />
-            <div class="card-body">
-              <div class="d-flex">
-                <p class="price">100.000đ</p>
-                <p class="sale_off ms-auto text-decoration-line-through text-muted">150.000đ</p>
-              </div>
-              <div class="name_product">Tên sản phẩm</div>
-              <div class=" d-flex">
-                <p class="feedback mb-0 me-1">4.5</p>
-                <img class="group-child4" alt="" src="./images/frame-121.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-3 pe-4 pb-3">
-          <div class="card_product card rounded-3">
-            <img class="card-img-top" alt="" src="./images/rectangle-23@2x.png" />
-            <div class="card-body">
-              <div class="d-flex">
-                <p class="price">100.000đ</p>
-                <p class="sale_off ms-auto text-decoration-line-through text-muted">150.000đ</p>
-              </div>
-              <div class="name_product">Tên sản phẩm</div>
-              <div class=" d-flex">
-                <p class="feedback mb-0 me-1">4.5</p>
-                <img class="group-child4" alt="" src="./images/frame-121.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-3 pe-4 pb-3">
-          <div class="card_product card rounded-3">
-            <img class="card-img-top" alt="" src="./images/rectangle-23@2x.png" />
-            <div class="card-body">
-              <div class="d-flex">
-                <p class="price">100.000đ</p>
-                <p class="sale_off ms-auto text-decoration-line-through text-muted">150.000đ</p>
-              </div>
-              <div class="name_product">Tên sản phẩm</div>
-              <div class=" d-flex">
-                <p class="feedback mb-0 me-1">4.5</p>
-                <img class="group-child4" alt="" src="./images/frame-121.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-3 pe-4 pb-3">
-          <div class="card_product card rounded-3">
-            <img class="card-img-top" alt="" src="./images/rectangle-23@2x.png" />
-            <div class="card-body">
-              <div class="d-flex">
-                <p class="price">100.000đ</p>
-                <p class="sale_off ms-auto text-decoration-line-through text-muted">150.000đ</p>
-              </div>
-              <div class="name_product">Tên sản phẩm</div>
-              <div class=" d-flex">
-                <p class="feedback mb-0 me-1">4.5</p>
-                <img class="group-child4" alt="" src="./images/frame-121.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-3 pe-4 pb-3">
-          <div class="card_product card rounded-3">
-            <img class="card-img-top" alt="" src="./images/rectangle-23@2x.png" />
-            <div class="card-body">
-              <div class="d-flex">
-                <p class="price">100.000đ</p>
-                <p class="sale_off ms-auto text-decoration-line-through text-muted">150.000đ</p>
-              </div>
-              <div class="name_product">Tên sản phẩm</div>
-              <div class=" d-flex">
-                <p class="feedback mb-0 me-1">4.5</p>
-                <img class="group-child4" alt="" src="./images/frame-121.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-3 pe-4 pb-3">
-          <div class="card_product card rounded-3">
-            <img class="card-img-top" alt="" src="./images/rectangle-23@2x.png" />
-            <div class="card-body">
-              <div class="d-flex">
-                <p class="price">100.000đ</p>
-                <p class="sale_off ms-auto text-decoration-line-through text-muted">150.000đ</p>
-              </div>
-              <div class="name_product">Tên sản phẩm</div>
-              <div class=" d-flex">
-                <p class="feedback mb-0 me-1">4.5</p>
-                <img class="group-child4" alt="" src="./images/frame-121.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-3 pe-4 pb-3">
-          <div class="card_product card rounded-3">
-            <img class="card-img-top" alt="" src="./images/rectangle-23@2x.png" />
-            <div class="card-body">
-              <div class="d-flex">
-                <p class="price">100.000đ</p>
-                <p class="sale_off ms-auto text-decoration-line-through text-muted">150.000đ</p>
-              </div>
-              <div class="name_product">Tên sản phẩm</div>
-              <div class=" d-flex">
-                <p class="feedback mb-0 me-1">4.5</p>
-                <img class="group-child4" alt="" src="./images/frame-121.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-3 pe-4 pb-3">
-          <div class="card_product card rounded-3">
-            <img class="card-img-top" alt="" src="./images/rectangle-23@2x.png" />
-            <div class="card-body">
-              <div class="d-flex">
-                <p class="price">100.000đ</p>
-                <p class="sale_off ms-auto text-decoration-line-through text-muted">150.000đ</p>
-              </div>
-              <div class="name_product">Tên sản phẩm</div>
-              <div class=" d-flex">
-                <p class="feedback mb-0 me-1">4.5</p>
-                <img class="group-child4" alt="" src="./images/frame-121.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-3 pe-4 pb-3">
-          <div class="card_product card rounded-3">
-            <img class="card-img-top" alt="" src="./images/rectangle-23@2x.png" />
+            <img class="card-img-top" alt="" src="./images/rectangle-37@2x.png" />
             <div class="card-body">
               <div class="d-flex">
                 <p class="price">100.000đ</p>
@@ -361,7 +389,7 @@
         </div>
         <div class="col">
           <div class="card_danh_muc card rounded-3" style="width: 9rem;">
-            <img class="card-img-top pt-4 px-4" alt="" src="./images/rectangle-151@2x.png" />
+            <img class="card-img-top pt-4 px-4" alt="" src="./images/rectangle-152@2x.png" />
             <div class="card-body">
               <div class="d-flex justify-content-center">
                 <p class="mb-0">Loại sản phẩm</p>
@@ -371,7 +399,7 @@
         </div>
         <div class="col">
           <div class="card_danh_muc card rounded-3" style="width: 9rem;">
-            <img class="card-img-top pt-4 px-4" alt="" src="./images/rectangle-151@2x.png" />
+            <img class="card-img-top pt-4 px-4" alt="" src="./images/rectangle-153@2x.png" />
             <div class="card-body">
               <div class="d-flex justify-content-center">
                 <p class="mb-0">Loại sản phẩm</p>
@@ -381,7 +409,7 @@
         </div>
         <div class="col">
           <div class="card_danh_muc card rounded-3" style="width: 9rem;">
-            <img class="card-img-top pt-4 px-4" alt="" src="./images/rectangle-151@2x.png" />
+            <img class="card-img-top pt-4 px-4" alt="" src="./images/rectangle-154@2x.png" />
             <div class="card-body">
               <div class="d-flex justify-content-center">
                 <p class="mb-0">Loại sản phẩm</p>
@@ -391,7 +419,7 @@
         </div>
         <div class="col">
           <div class="card_danh_muc card rounded-3" style="width: 9rem;">
-            <img class="card-img-top pt-4 px-4" alt="" src="./images/rectangle-151@2x.png" />
+            <img class="card-img-top pt-4 px-4" alt="" src="./images/rectangle-155@2x.png" />
             <div class="card-body">
               <div class="d-flex justify-content-center">
                 <p class="mb-0">Loại sản phẩm</p>
@@ -401,7 +429,7 @@
         </div>
         <div class="col">
           <div class="card_danh_muc card rounded-3" style="width: 9rem;">
-            <img class="card-img-top pt-4 px-4" alt="" src="./images/rectangle-151@2x.png" />
+            <img class="card-img-top pt-4 px-4" alt="" src="./images/rectangle-156@2x.png" />
             <div class="card-body">
               <div class="d-flex justify-content-center">
                 <p class="mb-0">Loại sản phẩm</p>
@@ -411,7 +439,7 @@
         </div>
         <div class="col">
           <div class="card_danh_muc card rounded-3" style="width: 9rem;">
-            <img class="card-img-top pt-4 px-4" alt="" src="./images/rectangle-151@2x.png" />
+            <img class="card-img-top pt-4 px-4" alt="" src="./images/rectangle-157@2x.png" />
             <div class="card-body">
               <div class="d-flex justify-content-center">
                 <p class="mb-0">Loại sản phẩm</p>
@@ -419,9 +447,9 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-2 col-md-3">
+        <div class="col">
           <div class="card_danh_muc card rounded-3" style="width: 9rem;">
-            <img class="card-img-top pt-4 px-4" alt="" src="./images/rectangle-151@2x.png" />
+            <img class="card-img-top pt-4 px-4" alt="" src="./images/rectangle-158@2x.png" />
             <div class="card-body">
               <div class="d-flex justify-content-center">
                 <p class="mb-0">Loại sản phẩm</p>
@@ -451,7 +479,7 @@
         </div>
         <div class="col-lg-2 col-md-3 pe-4 pb-3">
           <div class="card_product card rounded-3">
-            <img class="card-img-top" alt="" src="./images/rectangle-15@2x.png" />
+            <img class="card-img-top" alt="" src="./images/rectangle-159@2x.png" />
             <div class="card-body">
               <div class="name_dich_vu">Tên cơ sở thú y</div>
               <div class=" d-flex">
@@ -463,7 +491,7 @@
         </div>
         <div class="col-lg-2 col-md-3 pe-4 pb-3">
           <div class="card_product card rounded-3">
-            <img class="card-img-top" alt="" src="./images/rectangle-15@2x.png" />
+            <img class="card-img-top" alt="" src="./images/rectangle-1510@2x.png" />
             <div class="card-body">
               <div class="name_dich_vu">Tên Hotel</div>
               <div class=" d-flex">
@@ -475,7 +503,7 @@
         </div>
         <div class="col-lg-2 col-md-3 pe-4 pb-3">
           <div class="card_product card rounded-3">
-            <img class="card-img-top" alt="" src="./images/rectangle-15@2x.png" />
+            <img class="card-img-top" alt="" src="./images/rectangle-1511@2x.png" />
             <div class="card-body">
               <div class="name_dich_vu">Tên Spa</div>
               <div class=" d-flex">
@@ -487,7 +515,7 @@
         </div>
         <div class="col-lg-2 col-md-3 pe-4 pb-3">
           <div class="card_product card rounded-3">
-            <img class="card-img-top" alt="" src="./images/rectangle-15@2x.png" />
+            <img class="card-img-top" alt="" src="./images/rectangle-1512@2x.png" />
             <div class="card-body">
               <div class="name_dich_vu">Tên Hotel</div>
               <div class=" d-flex">
@@ -499,7 +527,7 @@
         </div>
         <div class="col-lg-2 col-md-3 pe-4 pb-3">
           <div class="card_product card rounded-3">
-            <img class="card-img-top" alt="" src="./images/rectangle-15@2x.png" />
+            <img class="card-img-top" alt="" src="./images/rectangle-1513@2x.png" />
             <div class="card-body">
               <div class="name_dich_vu">Tên cơ sở thú y</div>
               <div class=" d-flex">
@@ -519,43 +547,45 @@
   <footer class="text-dark mt-5 py-4">
     <div class="container">
       <div class="row">
-        <div class="col-md-2 me-5">
-          <h5>GIỚI THIỆU</h5>
-          <p>Giới thiệu về PetPicks</p>
-          <p>Hệ thống cửa hàng</p>
-          <p>Tuyển dụng</p>
-          <p>Liên hệ, tuyển dụng</p>
+        <div class="col-md-2 me-5 d-flex flex-column">
+          <a class="h5 pb-2 text-footer" href="#">GIỚI THIỆU</a>
+          <a class="pb-2 text-footer" href="#">Giới thiệu về PetPicks</a>
+          <a class="pb-2 text-footer" href="#">Hệ thống cửa hàng</a>
+          <a class="pb-2 text-footer" href="#">Tuyển dụng</a>
+          <a class="text-footer" href="#">Liên hệ, tuyển dụng</a>
         </div>
-        <div class="col-md-2 me-5">
-          <h5>CHÍNH SÁCH</h5>
-          <p>Điều khoản & dịch vụ</p>
-          <p>Chính sách bảo mật</p>
-          <p>Quy định bảo hành</p>
-          <p>Hình thức thanh toán</p>
+        <div class="col-md-2 me-5 d-flex flex-column">
+          <a class="h5 pb-2 text-footer" href="#">CHÍNH SÁCH</a>
+          <a class="pb-2 text-footer" href="#">Điều khoản & dịch vụ</a>
+          <a class="pb-2 text-footer" href="#">Chính sách bảo mật</a>
+          <a class="pb-2 text-footer" href="#">Quy định bảo hành</a>
+          <a class="text-footer" href="#">Hình thức thanh toán</a>
         </div>
-        <div class="col-md-2 me-5">
-          <h5>TÀI KHOẢN</h5>
-          <p>Thay đổi thông tin</p>
-          <p>Lấy lại mật khẩu</p>
-          <p>Lịch sử mua hàng</p>
-          <p>Quản lý giỏ hàng</p>
+        <div class="col-md-2 me-5 d-flex flex-column">
+          <a class="h5 pb-2 text-footer" href="#">TÀI KHOẢN</a>
+          <a class="pb-2 text-footer" href="#">Thay đổi thông tin</a>
+          <a class="pb-2 text-footer" href="#">Lấy lại mật khẩu</a>
+          <a class="pb-2 text-footer" href="#">Lịch sử mua hàng</a>
+          <a class=" text-footer" href="#">Quản lý giỏ hàng</a>
         </div>
-        <div class="col-md-2">
-          <h5>HỖ TRỢ </h5>
-          <p>Hướng dẫn mua hàng</p>
-          <p>Khuyến mãi</p>
-          <p>Giao nhận hàng hóa</p>
-          <p>Khiếu nại bồi thường</p>
+        <div class="col-md-2 d-flex flex-column">
+          <a class="h5 pb-2 text-footer" href="#">HỖ TRỢ</a>
+          <a class="pb-2 text-footer" href="#">Hướng dẫn mua hàng</a>
+          <a class="pb-2 text-footer" href="#">Khuyến mãi</a>
+          <a class="pb-2 text-footer" href="#">Giao nhận hàng hóa</a>
+          <a class=" text-footer" href="#">Khiếu nại bồi thường</a>
         </div>
         <div class="col-md-2 d-flex align-items-center justify-content-end">
-          <img class="logo-head" alt="logo" src="./images/rectangle-35@2x.png">
-          <a class="navbar-brand" aria-current="page" href="#">PETPICKS</a>
+          <a href="#">
+            <img class="logo-head" alt="logo" src="./images/rectangle-35@2x.png">
+            <a class="navbar-brand" aria-current="page" href="#">PETPICKS</a>
+          </a>
         </div>
       </div>
     </div>
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
-  
+
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
@@ -563,6 +593,44 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
     crossorigin="anonymous"></script>
+  <script>
+    // When the user scrolls the page, execute myFunction
+    window.onscroll = function () { myFunction() };
+
+    // Get the header
+    var header = document.getElementById("myHeader");
+
+    // Get the offset position of the navbar
+    var sticky = header.offsetTop;
+
+    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+  </script>
+  <script>
+    // Lấy tất cả các thẻ a có class="card_product"
+    var productCards = document.querySelectorAll('.card_product');
+
+    // Thêm sự kiện click cho từng thẻ
+    productCards.forEach(function(card) {
+        card.addEventListener('click', function(event) {
+            // Ngăn chặn hành vi mặc định của thẻ a
+            event.preventDefault();
+
+            // Đặt giá trị href thành "abc.html"
+            card.setAttribute('href', 'trangchu.html');
+
+            // Chuyển hướng đến trang web mới
+            var destination = card.getAttribute('href');
+            window.location.href = destination;
+        });
+    });
+</script>
 </body>
 
 </html>

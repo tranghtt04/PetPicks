@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Đăng ký - PetPicks</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- file css -->
+    <link rel="stylesheet" href="trangchu.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- link font chữ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Luckiest+Guy&display=swap"
+        rel="stylesheet">
+    <!-- css Scroll Header-->
+    <style>
+        :root {
+            --primary: #FF5DA8;
+            --light: #FFE0EE;
+            --dark: #212529;
+            --white: #ffffff;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none !important;
+            /* hủy gạch chân liên kết */
+            color: var(--dark) !important;
+        }
+
+        html {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* navmenu */
+        .navbar {
+            background-color: #FFE0EE;
+        }
+
+        .logo-head {
+            width: 120px;
+            height: 103px;
+            object-fit: cover;
+        }
+
+        .navbar-brand {
+            font-family: 'Luckiest Guy', cursive;
+            color: var(--primary) !important;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .form_search {
+            position: relative;
+        }
+
+        .icon_search {
+            position: absolute;
+            top: 14%;
+            left: 92%;
+        }
+
+        /* The sticky class is added to the header with JS when it reaches its scroll position */
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+        .sticky+.content {
+            padding-top: 102px;
+        }
+
+        /* form đăng ký */
+        .brand {
+            font-family: 'Luckiest Guy', cursive;
+            color: var(--primary) !important;
+            font-weight: 400;
+            font-size: 65px;
+            letter-spacing: 1px;
+        }
+
+        .container-form {
+            width: 71%;
+            min-height: 80vh;
+            background-color: #FFEDF5;
+            border-radius: 30px;
+        }
+
+        .form-control {
+            border: 2px solid var(--primary) !important;
+        }
+
+        .btn_hong {
+            color: var(--white) !important;
+            background-color: var(--primary) !important;
+        }
+
+        .btn_hong:hover {
+            color: var(--dark) !important;
+            border: 2px solid var(--primary) !important;
+            background-color: var(--white) !important;
+        }
+        /* footer */
+        footer {
+            background-color: var(--light);
+        }
+
+        .text-footer:hover {
+            color: var(--primary) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- nav menu -->
+        <nav class="navbar navbar-expand-lg header" id="myHeader">
+            <div class="container">
+                <div>
+                    <img class="logo-head" alt="logo" src="./images/rectangle-35@2x.png">
+                    <a class="navbar-brand" aria-current="page" href="#">PETPICKS</a>
+                </div>
+                <p class="me-auto px-4 fs-2">ĐĂNG KÝ</p>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container m-3">
+            <div class="row">
+                <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+                    <img alt="logo" src="./images/rectangle-35@2x.png">
+                    <a class="brand" aria-current="page" href="#">PETPICKS</a>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center">
+                    <div class="container-form p-4">
+                        <p class="text-center display-6 p-4">Đăng ký</p>
+                        <form>
+                            <div class="mb-4">
+                                <input type="text" class="form-control w-100 rounded-4 py-2 px-3"
+                                    placeholder="Tên đăng nhập">
+                            </div>
+                            <div class="mb-4">
+                                <input type="email" class="form-control w-100 rounded-4 py-2 px-3" placeholder="Email">
+                            </div>
+                            <div class="mb-4">
+                                <input type="password" class="form-control w-100 rounded-4 py-2 px-3"
+                                    placeholder="Mật khẩu">
+                            </div>
+                            <div class="mb-5">
+                                <input type="password" class="form-control w-100 rounded-4 py-2 px-3"
+                                    placeholder="Xác nhận lại mật khẩu">
+                            </div>
+                        </form>
+                        <div class="d-flex justify-content-between">
+                            <a href="#" class="btn btn_hong rounded-pill py-sm-2 px-sm-5">Đăng nhập</a>
+                            <a href="#" class="btn btn_hong rounded-pill py-sm-2 px-sm-5">Đăng ký</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- footer -->
+    <footer class="text-dark mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 me-5 d-flex flex-column">
+                    <a class="h5 pb-2 text-footer" href="#">GIỚI THIỆU</a>
+                    <a class="pb-2 text-footer" href="#">Giới thiệu về PetPicks</a>
+                    <a class="pb-2 text-footer" href="#">Hệ thống cửa hàng</a>
+                    <a class="pb-2 text-footer" href="#">Tuyển dụng</a>
+                    <a class="text-footer" href="#">Liên hệ, tuyển dụng</a>
+                </div>
+                <div class="col-md-2 me-5 d-flex flex-column">
+                    <a class="h5 pb-2 text-footer" href="#">CHÍNH SÁCH</a>
+                    <a class="pb-2 text-footer" href="#">Điều khoản & dịch vụ</a>
+                    <a class="pb-2 text-footer" href="#">Chính sách bảo mật</a>
+                    <a class="pb-2 text-footer" href="#">Quy định bảo hành</a>
+                    <a class="text-footer" href="#">Hình thức thanh toán</a>
+                </div>
+                <div class="col-md-2 me-5 d-flex flex-column">
+                    <a class="h5 pb-2 text-footer" href="#">TÀI KHOẢN</a>
+                    <a class="pb-2 text-footer" href="#">Thay đổi thông tin</a>
+                    <a class="pb-2 text-footer" href="#">Lấy lại mật khẩu</a>
+                    <a class="pb-2 text-footer" href="#">Lịch sử mua hàng</a>
+                    <a class=" text-footer" href="#">Quản lý giỏ hàng</a>
+                </div>
+                <div class="col-md-2 d-flex flex-column">
+                    <a class="h5 pb-2 text-footer" href="#">HỖ TRỢ</a>
+                    <a class="pb-2 text-footer" href="#">Hướng dẫn mua hàng</a>
+                    <a class="pb-2 text-footer" href="#">Khuyến mãi</a>
+                    <a class="pb-2 text-footer" href="#">Giao nhận hàng hóa</a>
+                    <a class=" text-footer" href="#">Khiếu nại bồi thường</a>
+                </div>
+                <div class="col-md-2 d-flex align-items-center justify-content-end">
+                    <a href="#">
+                        <img class="logo-head" alt="logo" src="./images/rectangle-35@2x.png">
+                        <a class="navbar-brand" aria-current="page" href="#">PETPICKS</a>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script>
+        // When the user scrolls the page, execute myFunction
+        window.onscroll = function () { myFunction() };
+
+        // Get the header
+        var header = document.getElementById("myHeader");
+
+        // Get the offset position of the navbar
+        var sticky = header.offsetTop;
+
+        // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+</body>
+
+</html>
