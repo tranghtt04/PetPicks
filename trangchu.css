@@ -41,10 +41,10 @@ html{
 }
 
 /* products */
-.card_product, .card_danh_muc{
+.card_product, .card_danh_muc, .card_dichvu{
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-.card_product:hover, .card_danh_muc:hover, .list-group-item:hover{
+.card_product:hover, .card_danh_muc:hover, .card_dichvu:hover, .list-group-item:hover{
   transform: scale(1.05);
   transition: transform 0.2s ease-in-out;
 }

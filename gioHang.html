@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Giỏ hàng - PetPicks</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- link font chữ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Luckiest+Guy&display=swap"
+        rel="stylesheet">
+    <!--icon font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css Scroll Header-->
+    <style>
+        :root {
+            --primary: #FF5DA8;
+            --light: #FFE0EE;
+            --dark: #212529;
+            --white: #ffffff;
+            --warning: #FC5252;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none !important;
+            /* hủy gạch chân liên kết */
+            color: var(--dark) !important;
+        }
+
+        html {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* navmenu */
+        .navbar {
+            background-color: #FFE0EE;
+        }
+
+        .logo-head {
+            width: 120px;
+            height: 103px;
+            object-fit: cover;
+        }
+
+        .navbar-brand {
+            font-family: 'Luckiest Guy', cursive;
+            color: var(--primary) !important;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .form_search {
+            position: relative;
+        }
+
+        .icon_search {
+            position: absolute;
+            top: 14%;
+            left: 92%;
+        }
+
+        /* The sticky class is added to the header with JS when it reaches its scroll position */
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+        .sticky+.content {
+            padding-top: 102px;
+        }
+
+        /* sidebar */
+        .item-primary {
+            background-color: var(--primary);
+        }
+
+        .item-secondary {
+            background-color: #FFEDF5;
+        }
+
+        /* tab */
+        input[type="checkbox"] {
+            appearance: none;
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--primary);
+            border-radius: 30%;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: var(--primary);
+        }
+
+        .tab-trang {
+            color: var(--dark) !important;
+            border: 2px solid var(--primary) !important;
+            background-color: var(--white) !important;
+            cursor: pointer;
+        }
+
+        .tab-trang:hover {
+            color: var(--white) !important;
+            background-color: var(--primary) !important;
+            cursor: pointer;
+        }
+
+        .tab-trang:active,
+        .tab-trang:focus {
+            color: var(--white) !important;
+            background-color: var(--primary) !important;
+        }
+
+        /* products */
+        .sp-section{
+            position: relative;
+        }
+        .btn-xoa{
+            position: absolute;
+            top: 4%;
+            left: 93%;
+        }
+        .card_product,
+        .card_danh_muc,
+        .card_dichvu {
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .card_product:hover,
+        .card_danh_muc:hover,
+        .card_dichvu:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .btn_xem_them,
+        .btn-hong {
+            color: var(--white) !important;
+            background-color: var(--primary) !important;
+        }
+
+        .btn_xem_them:hover {
+            color: var(--dark) !important;
+            border: 2px solid var(--primary) !important;
+            background-color: var(--white) !important;
+        }
+
+        /* footer */
+        footer {
+            background-color: var(--light);
+        }
+
+        .text-footer:hover {
+            color: var(--primary) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- nav menu -->
+        <nav class="navbar navbar-expand-lg header" id="myHeader">
+            <div class="container">
+                <img class="logo-head" alt="logo" src="./images/rectangle-35@2x.png">
+                <a class="navbar-brand" aria-current="page" href="trangchu.html">PETPICKS</a>
+                <form class="form_search d-flex w-50" role="search">
+                    <input class="form-control me-2 rounded-pill py-2" type="search" data-bs-toggle="dropdown"
+                        aria-expanded="false" placeholder="Tìm kiếm ngay" aria-label="Search">
+                    <ul class="dropdown-menu w-100 rounded rounded-4">
+                        <div class="row">
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Vòng cổ</a></li>
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Đồ chơi</a></li>
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Pate</a></li>
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Vòng cổ</a></li>
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Hạt cho mèo</a></li>
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Đồ chơi</a></li>
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Pate</a></li>
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Quẩn áo dễ thương</a></li>
+                        </div>
+                        <li><a class="dropdown-item text-end" href="#">Lịch sử tìm kiếm</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <div class="row">
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Vòng cổ</a></li>
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Đồ chơi</a></li>
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Pate</a></li>
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Vòng cổ</a></li>
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Hạt cho mèo</a></li>
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Đồ chơi</a></li>
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Pate</a></li>
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Quẩn áo dễ thương</a></li>
+                        </div>
+                        <li><a class="dropdown-item text-end" href="#">Sản phẩm đề xuất</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <div class="row">
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Pate</a></li>
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Vòng cổ</a></li>
+                            <li class="col-lg-2"><a class="dropdown-item" href="#">Quẩn áo dễ thương</a></li>
+                        </div>
+                        <li><a class="dropdown-item text-end " href="#">Từ khóa hot</a></li>
+                    </ul>
+                    <a href="sanPham.html"><img class="icon_search" src="./images/frame-39.svg" alt=""></a>
+                </form>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                        <a href="dangNhap.html">
+                            <li class="nav-item text-center">
+                                <img src="./images/frame-34.svg" alt="">
+                                <a class="nav-link text-dark" href="#">Đăng nhập/Đăng ký</a>
+                            </li>
+                        </a>
+                        <a href="lichHen.html">
+                            <li class="nav-item text-center ms-5">
+                                <img src="./images/frame-35.svg" alt="">
+                                <a class="nav-link text-dark" href="#">Lịch hẹn</a>
+                            </li>
+                        </a>
+                        <a href="gioHang.html">
+                            <li class="nav-item text-center ms-5">
+                                <img src="./images/frame-36.svg" alt="">
+                                <a class="nav-link text-dark" href="#">Giỏ hàng</a>
+                            </li>
+                        </a>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <ul class="d-flex justify-content-between pt-4">
+                <li class="list-group-item text-center col-2">
+                    <form><input type="checkbox"></form>
+                </li>
+                <li class="list-group-item text-center col-2">
+                    <button class="nav-link btn btn-hong border-2 rounded-3 px-5 py-2">Sản phẩm</button>
+                </li>
+                <li class="list-group-item text-center col-2">
+                    <button class="nav-link btn btn-hong border-2 rounded-3 px-5 py-2">Đơn giá</button>
+                </li>
+                <li class="list-group-item text-center col-2">
+                    <button class="nav-link btn btn-hong border-2 rounded-3 px-5 py-2">Số lượng</button>
+                </li>
+                <li class="list-group-item text-center col-2">
+                    <button class="nav-link btn btn-hong border-2 rounded-3 px-5 py-2">Số tiền</button>
+                </li>
+            </ul>
+            <!-- các sp trong giỏ -->
+            <ul class="sp-section d-flex justify-content-between align-items-center py-3 item-secondary">
+                <li class="list-group-item text-center col-2">
+                    <form><input type="checkbox"></form>
+                </li>
+                <li class="list-group-item col-2">
+                    <div class="card_product card rounded-3">
+                        <img class="card-img-top" alt="" src="./images/Rectangle 43-3.png" />
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <p class="price">100.000đ</p>
+                                <p class="sale_off ms-auto text-decoration-line-through text-muted">
+                                    150.000đ</p>
+                            </div>
+                            <div class="name_product">Tên sản phẩm</div>
+                            <div class=" d-flex">
+                                <p class="feedback mb-0 me-1">4.5</p>
+                                <img class="group-child4" alt="" src="./images/frame-121.svg" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item text-center col-2 fs-5">
+                    100,000 đ
+                </li>
+                <li class="list-group-item text-center col-2">
+                    <img src="./images/them_bot.png" class="img-fluid">
+                </li>
+                <li class="list-group-item text-center col-2 h5">
+                    100,000 đ
+                </li>
+                <a href="#" class="btn-xoa text-white text-center py-1 px-4" style="background-color: var(--warning);">Xóa</a>
+            </ul>
+            <ul class="sp-section d-flex justify-content-between align-items-center py-3 mt-4 item-secondary">
+                <li class="list-group-item text-center col-2">
+                    <form><input type="checkbox"></form>
+                </li>
+                <li class="list-group-item col-2">
+                    <div class="card_product card rounded-3">
+                        <img class="card-img-top" alt="" src="./images/Rectangle 43-1.png" />
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <p class="price">96.000đ</p>
+                                <p class="sale_off ms-auto text-decoration-line-through text-muted">
+                                    150.000đ</p>
+                            </div>
+                            <div class="name_product">Tên sản phẩm</div>
+                            <div class=" d-flex">
+                                <p class="feedback mb-0 me-1">4.5</p>
+                                <img class="group-child4" alt="" src="./images/frame-121.svg" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item text-center col-2 fs-5">
+                    96,000 đ
+                </li>
+                <li class="list-group-item text-center col-2">
+                    <img src="./images/them_bot.png" class="img-fluid">
+                </li>
+                <li class="list-group-item text-center col-2 h5">
+                    96,000 đ
+                </li>
+                <a href="#" class="btn-xoa text-white text-center py-1 px-4" style="background-color: var(--warning);">Xóa</a>
+            </ul>
+            <div class="d-flex justify-content-center">
+                <a href="#" class="btn btn_xem_them rounded-pill py-sm-2 px-sm-5">Xem thêm</a>
+            </div>
+            <!-- tổng -->
+            <ul class="d-flex justify-content-between align-items-center mt-5 py-4 border-top border-bottom ">
+                <li class="list-group-item text-center col-2">
+                    <form><input type="checkbox"></form>
+                </li>
+                <li class="list-group-item text-center col-2">
+                    <button class="nav-link btn btn-hong border-2 rounded-3 px-5 py-2">Chọn tất cả</button>
+                </li>
+                <li class="list-group-item text-center col-2">
+                    <a href="#" class="text-white text-center py-1 px-4" style="background-color: var(--warning);">Xóa</a>
+                </li>
+                <li class="list-group-item text-center col-4">
+                    <button class="nav-link btn btn-hong border-2 rounded-3 px-5 py-2">Tổng thanh toán (2 sản phẩm)</button>
+                </li>
+                <li class="list-group-item text-center col-2 h5">
+                    196,000 đ
+                </li>
+            </ul>
+            <div class="d-flex justify-content-end">
+                <a href="dangNhap-sp.html" class="btn btn_xem_them rounded-pill py-sm-2 px-sm-5">Mua hàng</a>
+            </div>
+        </div>
+    </main>
+    <!-- footer -->
+    <footer class="text-dark mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 me-5 d-flex flex-column">
+                    <a class="h5 pb-2 text-footer" href="#">GIỚI THIỆU</a>
+                    <a class="pb-2 text-footer" href="#">Giới thiệu về PetPicks</a>
+                    <a class="pb-2 text-footer" href="#">Hệ thống cửa hàng</a>
+                    <a class="pb-2 text-footer" href="#">Tuyển dụng</a>
+                    <a class="text-footer" href="#">Liên hệ, tuyển dụng</a>
+                </div>
+                <div class="col-md-2 me-5 d-flex flex-column">
+                    <a class="h5 pb-2 text-footer" href="#">CHÍNH SÁCH</a>
+                    <a class="pb-2 text-footer" href="#">Điều khoản & dịch vụ</a>
+                    <a class="pb-2 text-footer" href="#">Chính sách bảo mật</a>
+                    <a class="pb-2 text-footer" href="#">Quy định bảo hành</a>
+                    <a class="text-footer" href="#">Hình thức thanh toán</a>
+                </div>
+                <div class="col-md-2 me-5 d-flex flex-column">
+                    <a class="h5 pb-2 text-footer" href="taiKhoan.html">TÀI KHOẢN</a>
+                    <a class="pb-2 text-footer" href="taiKhoan.html">Thay đổi thông tin</a>
+                    <a class="pb-2 text-footer" href="datLaiMatKhauMot.html">Lấy lại mật khẩu</a>
+                    <a class="pb-2 text-footer" href="donHang.html">Lịch sử mua hàng</a>
+                    <a class=" text-footer" href="gioHang.html">Quản lý giỏ hàng</a>
+                </div>
+                <div class="col-md-2 d-flex flex-column">
+                    <a class="h5 pb-2 text-footer" href="#">HỖ TRỢ</a>
+                    <a class="pb-2 text-footer" href="#">Hướng dẫn mua hàng</a>
+                    <a class="pb-2 text-footer" href="#">Khuyến mãi</a>
+                    <a class="pb-2 text-footer" href="#">Giao nhận hàng hóa</a>
+                    <a class=" text-footer" href="#">Khiếu nại bồi thường</a>
+                </div>
+                <div class="col-md-2 d-flex align-items-center justify-content-end">
+                    <a href="#">
+                        <img class="logo-head" alt="logo" src="./images/rectangle-35@2x.png">
+                        <a class="navbar-brand" aria-current="page" href="#">PETPICKS</a>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script>
+        // When the user scrolls the page, execute myFunction
+        window.onscroll = function () { myFunction() };
+
+        // Get the header
+        var header = document.getElementById("myHeader");
+
+        // Get the offset position of the navbar
+        var sticky = header.offsetTop;
+
+        // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+    <script>
+        // Lấy tất cả các thẻ a có class="card_product"
+        var productCards = document.querySelectorAll('.card_product');
+
+        // Thêm sự kiện click cho từng thẻ
+        productCards.forEach(function (card) {
+            card.addEventListener('click', function (event) {
+                // Ngăn chặn hành vi mặc định của thẻ a
+                event.preventDefault();
+
+                // Đặt giá trị href thành "abc.html"
+                card.setAttribute('href', 'chiTietSanPham.html');
+
+                // Chuyển hướng đến trang web mới
+                var destination = card.getAttribute('href');
+                window.location.href = destination;
+            });
+        });
+    </script>
+</body>
+
+</html>

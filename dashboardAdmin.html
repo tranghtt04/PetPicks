@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Dashboard cho Admin</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- link font chữ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Luckiest+Guy&display=swap"
+        rel="stylesheet">
+    <!-- css Scroll Header-->
+    <style>
+        :root {
+            --primary: #FF5DA8;
+            --light: #FFE0EE;
+            --light-nd: #FFEDF5;
+            --dark: #212529;
+            --white: #ffffff;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none !important;
+            /* hủy gạch chân liên kết */
+            color: var(--dark) !important;
+        }
+
+        html {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* navmenu */
+        .nav-bar {
+            background-color: #FFE0EE !important;
+        }
+
+        .logo-head {
+            width: 120px;
+            height: 103px;
+            object-fit: cover;
+        }
+
+        .navbar-brand {
+            font-family: 'Luckiest Guy', cursive;
+            color: var(--primary) !important;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .item-head {
+            background-color: var(--primary);
+        }
+
+        .btn_hong {
+            background-color: var(--primary) !important;
+        }
+
+        .btn_hong:hover {
+            color: var(--dark) !important;
+            border: 2px solid var(--primary) !important;
+            background-color: var(--white) !important;
+        }
+
+        /* The sticky class is added to the header with JS when it reaches its scroll position */
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+        .sticky+.content {
+            padding-top: 102px;
+        }
+
+        /* doanh số section*/
+        .item-primary {
+            background-color: #FFA4CE;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        .bg-white{
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        /* footer */
+        footer {
+            background-color: var(--light);
+        }
+
+        .text-footer:hover {
+            color: var(--primary) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- nav menu -->
+        <div class="nav-bar navbar-expand-lg header" id="myHeader">
+            <div class="container">
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="list-group-item dropdown text-center col-4 ">
+                        <button class="btn btn_hong py-1 w-100 rounded-3 dropdown-toggle text-white" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="true">
+                            Tất cả các cửa hàng
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Cửa hàng phụ kiện thú cưng PET YÊU - TP Nha Trang</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Cơ sở thú ý Phạm Ngọc Thạch - TP Hồ Chí Minh</a></li>
+                            <li><a class="dropdown-item" href="#">Hotel thú cưng - TP Đà Lạt</a></li>
+                            <li><a class="dropdown-item" href="#">Cửa hàng phụ kiện thú cưng Mật Pet - TP Nha Trang</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="trangchu.html">
+                        <div class="list-group-item text-center col-4">
+                            <img class="logo-head" alt="logo" src="./images/rectangle-35@2x.png">
+                            <a class="navbar-brand fs-3" aria-current="page" href="trangchu.html">PETPICKS</a>
+                        </div>
+                    </a>
+                    <div class="list-group-item text-center text-white col-4">
+                        <p class="item-head py-1 rounded-3">Dashboard Admin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- doanh số section -->
+        <div class="container mt-5 py-3" style="background-color: var(--light-nd);">
+            <div class="d-flex justify-content-center text-center">
+                <p class="item-primary py-1 col-4">Doanh thu hôm nay</p>
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="list-group-item text-center col-4">
+                    <p class="item-primary py-1 w-75">Doanh thu hôm qua</p>
+                    <p class="bg-white py-1 w-75">1,500,000 đ</p>
+                </div>
+                <div class="list-group-item text-center col-4 d-flex justify-content-center">
+                    <p class="bg-white py-3 w-75 fs-3 fw-bold">2,080,000 đ</p>
+                </div>
+                <div class="list-group-item text-center col-4">
+                    <p class="item-primary py-1 w-75 ms-auto">Doanh thu tuần này</p>
+                    <p class="bg-white py-1 w-75 ms-auto">9,006,000 đ</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center text-center">
+                <p class="bg-white py-1 px-5 col-4 w-auto">Ngày 05/01/2024</p>
+            </div>
+        </div>
+        <!-- doanh số chi tiết -->
+        <div class="container mt-3 py-3" style="background-color: var(--light-nd);">
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="list-group-item text-center col-4 pe-3">
+                    <p class="item-primary py-1 w-75">Các chỉ số quan trọng</p>
+                    <div class="container-fluid bg-white py-5">
+                        <div class="row justify-content-center align-items-center text-center">
+                            <div class="list-group-item text-center col-5">
+                                <div class="pe-2">
+                                    <p class="py-1" style="background-color: var(--light-nd);">Khách hàng</p>
+                                    <p class="py-1">1,500,000 đ</p>
+                                </div>
+                            </div>
+                            <div class="list-group-item text-center col-5">
+                                <div class="">
+                                    <p class="py-1" style="background-color: var(--light-nd);">Lượt xem</p>
+                                    <p class="py-1">1,500,000 đ</p>
+                                </div>
+                            </div>
+                            <div class="list-group-item text-center col-5">
+                                <div class="pe-2">
+                                    <p class="py-1" style="background-color: var(--light-nd);">Đơn hàng</p>
+                                    <p class="py-1">1,500,000 đ</p>
+                                </div>
+                            </div>
+                            <div class="list-group-item text-center col-5">
+                                <div class="">
+                                    <p class="py-1" style="background-color: var(--light-nd);">Sản phẩm</p>
+                                    <p class="py-1">1,500,000 đ</p>
+                                </div>
+                            </div>
+                            <div class="list-group-item text-center col-5">
+                                <div class="pe-2">
+                                    <p class="py-1" style="background-color: var(--light-nd);">Lượt mua</p>
+                                    <p class="py-1">1,500,000 đ</p>
+                                </div>
+                            </div>
+                            <div class="list-group-item text-center col-5">
+                                <div class="">
+                                    <p class="py-1" style="background-color: var(--light-nd);">Áp dụng voucher</p>
+                                    <p class="py-1">1,500,000 đ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item text-center col-4 pe-3">
+                    <p class="item-primary py-1 w-75">Xu hướng doanh thu hôm nay</p>
+                    <div class="container-fluid bg-white py-4">
+                        <p class="py-1 w-25 px-2" style="background-color: var(--light-nd);">Doanh thu</p>
+                        <img class="img-fluid" src="./images/chart.png" alt="">
+                        <div class="d-flex justify-content-end ">
+                            <p class="py-1 w-25 px-2 mt-2 " style="background-color: var(--light-nd);">Giờ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item text-center col-4">
+                    <p class="item-primary py-1 w-75">Top sản phẩm bán chạy theo doanh thu</p>
+                    <div class="container-fluid bg-white py-5">
+                        <div class="container">
+                            <div class="row justify-content-center align-items-center text-center">
+                                <div class="list-group-item col-3">
+                                    <div class="pe-2">
+                                        <img src="./images/rectangle-23@2x.png" style="width: 95%;">
+                                    </div>
+                                </div>
+                                <div class="list-group-item col-9 mb-2">
+                                    <div class="bg-white ps-3">
+                                        <div class="d-flex">
+                                            <p class="price">100.000đ</p>
+                                            <p class="sale_off ms-4 text-decoration-line-through text-muted">150.000đ
+                                            </p>
+                                        </div>
+                                        <div class="d-flex name_product mt-0">Tên sản phẩm</div>
+                                        <div class=" d-flex">
+                                            <p class="feedback mb-0 me-1">4.5</p>
+                                            <img class="group-child4" alt="" src="./images/frame-121.svg" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item col-3">
+                                    <div class="pe-2">
+                                        <img src="./images/rectangle-371@2x.png" style="width: 95%;">
+                                    </div>
+                                </div>
+                                <div class="list-group-item col-9 mb-2">
+                                    <div class="bg-white ps-3">
+                                        <div class="d-flex">
+                                            <p class="price">100.000đ</p>
+                                            <p class="sale_off ms-4 text-decoration-line-through text-muted">150.000đ
+                                            </p>
+                                        </div>
+                                        <div class="d-flex name_product mt-0">Tên sản phẩm</div>
+                                        <div class=" d-flex">
+                                            <p class="feedback mb-0 me-1">4.5</p>
+                                            <img class="group-child4" alt="" src="./images/frame-121.svg" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item col-3">
+                                    <div class="pe-2">
+                                        <img src="./images/rectangle-431@2x.png" style="width: 95%;">
+                                    </div>
+                                </div>
+                                <div class="list-group-item col-9  mb-2">
+                                    <div class="bg-white ps-3">
+                                        <div class="d-flex">
+                                            <p class="price">100.000đ</p>
+                                            <p class="sale_off ms-4 text-decoration-line-through text-muted">150.000đ
+                                            </p>
+                                        </div>
+                                        <div class="d-flex name_product mt-0">Tên sản phẩm</div>
+                                        <div class=" d-flex">
+                                            <p class="feedback mb-0 me-1">4.5</p>
+                                            <img class="group-child4" alt="" src="./images/frame-121.svg" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- footer -->
+    <footer class="text-dark mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 me-5 d-flex flex-column">
+                    <a class="h5 pb-2 text-footer" href="#">GIỚI THIỆU</a>
+                    <a class="pb-2 text-footer" href="#">Giới thiệu về PetPicks</a>
+                    <a class="pb-2 text-footer" href="#">Hệ thống cửa hàng</a>
+                    <a class="pb-2 text-footer" href="#">Tuyển dụng</a>
+                    <a class="text-footer" href="#">Liên hệ, tuyển dụng</a>
+                </div>
+                <div class="col-md-2 me-5 d-flex flex-column">
+                    <a class="h5 pb-2 text-footer" href="#">CHÍNH SÁCH</a>
+                    <a class="pb-2 text-footer" href="#">Điều khoản & dịch vụ</a>
+                    <a class="pb-2 text-footer" href="#">Chính sách bảo mật</a>
+                    <a class="pb-2 text-footer" href="#">Quy định bảo hành</a>
+                    <a class="text-footer" href="#">Hình thức thanh toán</a>
+                </div>
+                <div class="col-md-2 me-5 d-flex flex-column">
+                    <a class="h5 pb-2 text-footer" href="taiKhoan.html">TÀI KHOẢN</a>
+                    <a class="pb-2 text-footer" href="taiKhoan.html">Thay đổi thông tin</a>
+                    <a class="pb-2 text-footer" href="datLaiMatKhauMot.html">Lấy lại mật khẩu</a>
+                    <a class="pb-2 text-footer" href="donHang.html">Lịch sử mua hàng</a>
+                    <a class=" text-footer" href="gioHang.html">Quản lý giỏ hàng</a>
+                </div>
+                <div class="col-md-2 d-flex flex-column">
+                    <a class="h5 pb-2 text-footer" href="#">HỖ TRỢ</a>
+                    <a class="pb-2 text-footer" href="#">Hướng dẫn mua hàng</a>
+                    <a class="pb-2 text-footer" href="#">Khuyến mãi</a>
+                    <a class="pb-2 text-footer" href="#">Giao nhận hàng hóa</a>
+                    <a class=" text-footer" href="#">Khiếu nại bồi thường</a>
+                </div>
+                <div class="col-md-2 d-flex align-items-center justify-content-end">
+                    <a href="trangchu.html">
+                        <img class="logo-head" alt="logo" src="./images/rectangle-35@2x.png">
+                        <a class="navbar-brand" href="trangchu.html">PETPICKS</a>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script>
+        // When the user scrolls the page, execute myFunction
+        window.onscroll = function () { myFunction() };
+
+        // Get the header
+        var header = document.getElementById("myHeader");
+
+        // Get the offset position of the navbar
+        var sticky = header.offsetTop;
+
+        // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+</body>
+
+</html>
